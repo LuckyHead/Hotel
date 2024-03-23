@@ -1,12 +1,12 @@
-from rest_framework import generics
+from rest_framework.viewsets import ModelViewSet
 
-from .models import Room
 from .serializers import RoomSerializer
+from .models import Room
 
-class RoomList(generics.ListCreateAPIView):
+class RoomListViewSet(ModelViewSet):
     queryset=Room.objects.all()
     serializer_class=RoomSerializer
 
-class RoomDetail(generics.RetrieveUpdateDestroyAPIView):
+class RoomDetailViewSet(ModelViewSet):
     queryset=Room.objects.all()
     serializer_class=RoomSerializer

@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
 
-# Create your views here.
+from .serializers import BookingSerializer
+from .models import Booking
+
+class BookingListViewSet(ModelViewSet):
+    queryset=Booking.objects.all()
+    serializer_class=BookingSerializer
+
+class BookingDetailViewSet(ModelViewSet):
+    queryset=Booking.objects.all()
+    serializer_class=BookingSerializer

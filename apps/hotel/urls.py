@@ -1,11 +1,13 @@
-from django.urls import path
+from rest_framework.routers import DefaultRouter
 
 from .views import (
-    HotelList,
-    HotelDetail
+    HotelListViewSet,
+    HotelDetailViewSet
 )
 
-urlpatterns=[
-    path('hotel/', HotelList.as_view(), name='hotel_list'),
-    path('hotel/<int:pk>/', HotelDetail.as_view(), name='hotel_detail')
-]
+router=DefaultRouter()
+router.register('hotel', HotelListViewSet, basename='hotel-list'),
+router.register('hotel/<int:pk>', HotelDetailViewSet, basename='hotel-detail')
+
+urlpatterns=[]
+urlpatterns+=router.urls

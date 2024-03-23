@@ -4,7 +4,11 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+    path('api/', include('apps.room.urls')),
+    path('api/', include('apps.booking.urls')),
+    path('api/', include('apps.hotel.urls')),
+    path('api/', include('guest.urls'))
 ]
 
 urlpatterns += static(

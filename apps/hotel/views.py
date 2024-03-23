@@ -1,12 +1,12 @@
-from rest_framework import generics
+from rest_framework.viewsets import ModelViewSet
 
-from .models import Hotel
 from .serializers import HotelSerializer
+from .models import Hotel
 
-class HotelList(generics.ListCreateAPIView):
+class HotelListViewSet(ModelViewSet):
     queryset=Hotel.objects.all()
     serializer_class=HotelSerializer
 
-class HotelDetail(generics.RetrieveUpdateDestroyAPIView):
+class HotelDetailViewSet(ModelViewSet):
     queryset=Hotel.objects.all()
     serializer_class=HotelSerializer
