@@ -30,7 +30,7 @@ class Hotel(Model):
 
     image=ImageField(
         'View of the hotel',
-        upload_to='hotek-images/'
+        upload_to='hotel-images/'
     )
 
     description=TextField(
