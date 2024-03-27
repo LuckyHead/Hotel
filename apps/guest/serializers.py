@@ -1,8 +1,8 @@
 from rest_framework.serializers import ModelSerializer
 
-from .models import User
+from .models import Guest
 
 class GuestSerializer(ModelSerializer):
     class Meta:
-        model=User
+        model=Guest
         fields='__all__'

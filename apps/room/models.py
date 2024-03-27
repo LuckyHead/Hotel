@@ -28,8 +28,8 @@ class Room(Model):
     )
 
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.number}'
     
     class Meta:
-        verbose_name='Room'
-        verbose_name_plural='Rooms'
+        verbose_name='room'
+        verbose_name_plural='rooms'

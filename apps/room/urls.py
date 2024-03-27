@@ -1,12 +1,12 @@
 from rest_framework.routers import DefaultRouter
 
 from .views import (
-    RoomListViewSet,
+    RoomViewSet,
     RoomDetailViewSet
 )
 
 router=DefaultRouter()
-router.register('room', RoomListViewSet, basename='room-list'),
+router.register('room', RoomViewSet, basename='room-list'),
 router.register('room/<int:pk>', RoomDetailViewSet, basename='room-detail')
 
 urlpatterns=[]

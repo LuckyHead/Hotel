@@ -1,7 +1,7 @@
 from django.contrib.admin import *
-from .models import User
+from .models import Guest
 
-@register(User)
+@register(Guest)
 class UserAdmin(ModelAdmin):
     list_display=('username',)
     list_display_links=('username',)

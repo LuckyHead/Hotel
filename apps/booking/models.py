@@ -1,5 +1,5 @@
 from django.db.models import *
-from guest.models import User
+from apps.guest.models import Guest
 from apps.room.models import Room
 
 class Booking(Model):
@@ -9,7 +9,7 @@ class Booking(Model):
     )
 
     guest=ManyToManyField(
-        User,
+        Guest,
         verbose_name='Guest',
     )
 
@@ -29,5 +29,5 @@ class Booking(Model):
 
 
     class Meta:
-        verbose_name='Booking'
-        verbose_name_plural='Bookings'
+        verbose_name='booking'
+        verbose_name_plural='bookings'

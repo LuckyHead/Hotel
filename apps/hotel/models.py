@@ -24,7 +24,7 @@ class Hotel(Model):
 
     rating=DecimalField(
         'Rating of the hotel',
-        max_digits=1,
+        max_digits=2,
         decimal_places=1
     )
 
@@ -42,6 +42,6 @@ class Hotel(Model):
     
     
     class Meta:
-        verbose_name='Hotel'
-        verbose_name_plural='Hotels'
+        verbose_name='hotel'
+        verbose_name_plural='hotels'
 

@@ -1,12 +1,12 @@
 from rest_framework.viewsets import ModelViewSet
 
 from .serializers import GuestSerializer
-from .models import User
+from .models import Guest
 
-class GuestListViewSet(ModelViewSet):
-    queryset=User.objects.all()
+class GuestViewSet(ModelViewSet):
+    queryset=Guest.objects.all()
     serializer_class=GuestSerializer
 
 class GuestDetailViewSet(ModelViewSet):
-    queryset=User.objects.all()
+    queryset=Guest.objects.all()
     serializer_class=GuestSerializer
