@@ -19,15 +19,12 @@ INSTALLED_APPS = [
 
     #local
     'apps.hotel',
-    'apps.room',
     'apps.guest',
-    'apps.booking',
 
     #3rd party
     'rest_framework',
     'rest_framework.authtoken',
     'dj_rest_auth',
-    'drf_spectacular'
 ]
 
 MIDDLEWARE = [
@@ -81,11 +78,7 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
-SPECTACULAR_SETTING = {
-    'TITLE': 'This is hotels in Nukus website',
-    'VERSION': '1.0.0',
-    'DESCRIPTION': 'This is site for found hotels for people who travels on the world'
-}
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {

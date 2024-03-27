@@ -6,10 +6,9 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('api/', include('apps.room.urls')),
-    path('api/', include('apps.booking.urls')),
+    path('api/auth/', include('dj_rest_auth.urls')),
     path('', include('apps.hotel.urls')),
-    path('api/', include('apps.guest.urls')),
+    path('guest/', include('apps.guest.urls')),
 ]
 
 urlpatterns += static(

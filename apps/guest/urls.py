@@ -1,13 +1,14 @@
+from django.urls import path
+from .views import *
 from rest_framework.routers import DefaultRouter
+from .views import GuestViewSet
 
-from .views import (
-    GuestViewSet,
-    GuestDetailViewSet
-)
+router = DefaultRouter()
+router.register("api", GuestViewSet, basename="api")
 
-router=DefaultRouter()
-router.register('guest', GuestViewSet, basename='guest-list'),
-router.register('guest/<int:pk>', GuestDetailViewSet, basename='guest-detail')
-
-urlpatterns=[]
-urlpatterns+=router.urls
+urlpatterns = [
+    path("signup/", signup, name="signup"),
+    path("login/", login, name="login"),
+    path("logout/", logout_view, name="logout_view"),
+]
+urlpatterns += router.urls
