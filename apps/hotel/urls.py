@@ -10,8 +10,8 @@ router.register("bookingapi", BookingViewSet, basename="booking")
 
 urlpatterns = [
     path("", homepage, name="home"),
-    path("hotels/", HotelList.as_view(), name="hotel_list"),
-    path("hotels/<int:pk>/", HotelDetail.as_view(), name="hotel_detail"),
+    path("hotels/", hotel_list, name="hotel_list"),
+    path("hotels/<int:pk>/", hotel_detail, name="hotel_detail"),
     path("hotels/<int:pk>/rooms/", hotel_rooms, name="hotel_rooms")
 ]
 

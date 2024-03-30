@@ -1,5 +1,6 @@
 media
 local.sqlite3
+production.sqlite3
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

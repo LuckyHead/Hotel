@@ -3,14 +3,6 @@ from django.contrib.auth.models import AbstractUser
 
 
 class Guest(AbstractUser):
-    first_name=CharField(
-        max_length=128
-    )
-
-    last_name=CharField(
-        max_length=128
-    )
-
     phone_number=CharField(
         'Phone number',
         max_length=13,

@@ -8,15 +8,29 @@ from rest_framework.viewsets import ModelViewSet
 def homepage(request):
     return render(request, "hotel/home.html")
 
-class HotelList(LoginRequiredMixin,ListView):
-    model=Hotel
-    template_name="hotel/hotel_list.html"
-    context_object_name='hotel_list'
+# class HotelList(LoginRequiredMixin,ListView):
+#     model=Hotel
+#     template_name="hotel/hotel_list.html"
+#     context_object_name='hotels'
 
-class HotelDetail(DetailView):
-    model=Hotel
-    template_name="hotel/hotel_detail.html"
-    context_object_name="hotel_detail"
+# class HotelDetail(DetailView):
+#     model=Hotel
+#     template_name="hotel/hotel_detail.html"
+#     context_object_name="hotel"
+
+def hotel_list(request):
+    hotels=Hotel.objects.all()
+    context={
+        'hotels': hotels
+    }
+    return render(request, 'hotel/hotel_list.html', context=context)
+
+def hotel_detail(request, pk):
+    hotel=Hotel.objects.get(id=pk)
+    context={
+        'hotel': hotel
+    }
+    return render(request, 'hotel/hotel_detail.html', context=context)
 
 def hotel_rooms(request, pk):
     if request.user.is_authenticated:
